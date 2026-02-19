@@ -1,13 +1,16 @@
-const app = require('express')();
-const PORT = 8080;
+const express = require("express");
+const cors = require("cors");
 
-app.listen(
-    PORT,
-    () => console.log(`Server is running on port ${PORT}`)
-)
+const app = express();
 
-app.get('/user', (req, res) => {
-    res.status(200).send({
-        op: 'Success'
-    })
-})
+app.use(cors());
+
+const PORT = process.env.PORT || 8080;
+
+app.get("/user", (req, res) => {
+  res.status(200).send({ op: "Success" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
