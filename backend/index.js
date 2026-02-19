@@ -3,7 +3,9 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://delightful-fulfillment-production.up.railway.app"
+}));
 
 const PORT = process.env.PORT || 8080;
 
