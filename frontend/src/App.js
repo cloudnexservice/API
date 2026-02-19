@@ -4,7 +4,7 @@ function App() {
   const[data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://54.242.213.243:8080/user")
+    fetch("https://api-production-a8ec.up.railway.app/users")
       .then((res) => res.json())
       .then((data) => {
         console.log("API Response:", data);
