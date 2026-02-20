@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://54.210.64.166:8080/user")
+    fetch("http://newsamp.duckdns.org/user")
       .then((res) => res.json())
       .then((data) => {
         console.log("API Response:", data);
