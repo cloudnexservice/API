@@ -1,38 +1,296 @@
-.App {
+/* Main Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: #282c34;
   text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Health Status */
+.health-status {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Error Message */
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Form Section */
+.form-section {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.form-section form {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-section input {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.2s;
+}
+
+.form-section input:focus {
+  outline: none;
+  border-color: #61dafb;
+  box-shadow: 0 0 5px rgba(97, 218, 251, 0.3);
+}
+
+.form-section button,
+.btn-edit,
+.btn-delete,
+.btn-save,
+.btn-cancel {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form-section button {
+  background-color: #61dafb;
+  color: #282c34;
+  flex-shrink: 0;
+}
+
+.form-section button:hover {
+  background-color: #4fa8c5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section button:active {
+  transform: translateY(0);
+}
+
+/* Users Section */
+.users-section {
+  margin-bottom: 30px;
+}
+
+.no-users {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Users List */
+.users-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.user-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #61dafb;
+}
+
+/* View Mode */
+.view-mode {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.user-id {
+  background-color: #e8f4f8;
+  color: #282c34;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.user-name {
+  flex: 1;
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 500;
+  min-width: 150px;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Edit Mode */
+.edit-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.edit-mode input {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 10px;
+  border: 2px solid #61dafb;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.edit-mode input:focus {
+  outline: none;
+  border-color: #4fa8c5;
+  box-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .form-section form {
+    flex-direction: column;
+  }
+
+  .form-section input {
+    min-width: unset;
+  }
+
+  .form-section button {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .view-mode {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .user-name {
+    flex: none;
+    width: 100%;
+  }
+
+  .edit-mode {
+    flex-direction: column;
+  }
+
+  .edit-mode input {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .btn-save,
+  .btn-cancel,
+  .btn-edit,
+  .btn-delete {
+    width: 100%;
   }
 }
+
