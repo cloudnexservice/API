@@ -6,7 +6,7 @@ const app = express();
 // CORS configuration - allows both production and local development
 app.use(cors({
   origin: [
-    "https://delightful-fulfillment-production.up.railway.app",
+    "https://api-production-822c.up.railway.app",
     "http://localhost:3000",
     "http://localhost:8080",
     "http://127.0.0.1:3000"
