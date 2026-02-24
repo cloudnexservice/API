@@ -4,13 +4,8 @@ const cors = require("cors");
 const app = express();
 
 // CORS configuration - allows both production and local development
-app.use(cors({
-  origin: [
-    "https://api-production-822c.up.railway.app",
-    "http://localhost:3000"
-  ],
-  credentials: true
-}));
+app.use(cors());
+app.options("*", cors());
 
 // JSON middleware for parsing request bodies
 app.use(express.json());
