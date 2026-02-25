@@ -6,8 +6,9 @@ const app = express();
 // CORS configuration - allows both production and local development
 app.use(cors({
   origin: "*",
-  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
-  allowedHeaders: ["Content-Type","Authorization"]
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false
 }));
 // JSON middleware for parsing request bodies
 app.use(express.json());
