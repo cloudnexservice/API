@@ -4,9 +4,16 @@ const cors = require("cors");
 const app = express();
 
 // CORS configuration - allows both production and local development
-app.use(cors());
-app.options("*", cors());
-
+app.use(cors({
+  origin: [
+    "https://api-production-822c.up.railway.app",
+    "https://api.g-cloudnex.com",
+    "http://localhost:3000"
+  ],
+  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
+}));
 // JSON middleware for parsing request bodies
 app.use(express.json());
 
