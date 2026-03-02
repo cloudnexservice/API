@@ -47,13 +47,6 @@ app.use(cors({
 
 app.use(express.json());
 
-// In-memory users database
-let users = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Bob Johnson" }
-];
-
 // All CRUD endpoints are implemented with error handling
 ```
 
